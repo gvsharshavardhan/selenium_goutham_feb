@@ -1,0 +1,16 @@
+
+Practice sites:
+-----------------
+10-02-2021
+-----------
+alerts:
+https://demoqa.com/alerts
+
+flight booking passengers(alerts, loops, dropdowns):
+https://rahulshettyacademy.com/dropdownsPractise/
+
+
+
+https://opensource-demo.orangehrmlive.com/index.php/pim/viewEmployeeList/reset/1
+http://omayo.blogspot.com/
+https://rahulshettyacademy.com/seleniumPractise/#/

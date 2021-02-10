@@ -47,12 +47,14 @@ public class BaseTest {
 	}
 
 	public void sleep(int seconds) {
-
 		try {
 			Thread.sleep(seconds * 1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-
+	}
+	
+	public void click(By by) {
+		getDriver().findElement(by).click();
 	}
 }
