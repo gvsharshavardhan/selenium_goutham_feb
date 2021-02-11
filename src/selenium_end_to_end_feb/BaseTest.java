@@ -1,14 +1,13 @@
 package selenium_end_to_end_feb;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
 
@@ -56,5 +55,13 @@ public class BaseTest {
 	
 	public void click(By by) {
 		getDriver().findElement(by).click();
+	}
+	
+	public String getTextFromElement(By by) {
+		return getDriver().findElement(by).getText().trim();
+	}
+	
+	public String getAlertText() {
+		return getDriver().switchTo().alert().getText();
 	}
 }
