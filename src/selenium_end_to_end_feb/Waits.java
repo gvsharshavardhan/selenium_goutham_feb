@@ -12,14 +12,11 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-import com.google.common.base.Function;
-
 public class Waits extends BaseTest {
 
 	@Test
 	public void pageLoadTimeOutTest() {
 //		getDriver().manage().timeouts().pageLoadTimeout(2,);
-
 		getDriver().get("https://demoqa.com/alerts");
 		click(By.cssSelector("#timerAlertButton"));
 		System.out.println(getDriver().switchTo().alert().getText());
@@ -58,8 +55,8 @@ public class Waits extends BaseTest {
 //		click(By.partialLinkText("Example 1:"));
 //		click(By.cssSelector("#timerAlertButton"));
 //		WebElement helloText = getDriver().findElement(By.cssSelector("#finish h4"));
-		Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver())
-				.withTimeout(5, TimeUnit.SECONDS)
+		Wait<WebDriver> wait = new FluentWait<WebDriver>(getDriver());
+				((FluentWait<WebDriver>) wait).withTimeout(5, TimeUnit.SECONDS)
 				.pollingEvery(1, TimeUnit.SECONDS)
 				.ignoring(NoSuchElementException.class);
 
@@ -72,5 +69,4 @@ public class Waits extends BaseTest {
 		WebElement helloText = getDriver().findElement(By.cssSelector("#finish h4"));
 		wait.until(ExpectedConditions.visibilityOf(helloText));
 	}
-
 }

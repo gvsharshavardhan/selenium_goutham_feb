@@ -1,3 +1,13 @@
+Important points:
+------------------
+window handles:
+----------------
+1. window id is unique always
+2. get window handles returns set of string(window ids)
+3. why only set?
+	because windows ids are unique and set takes only unique elements
+
+
 
 Practice sites:
 -----------------
@@ -10,7 +20,65 @@ flight booking passengers(alerts, loops, dropdowns):
 https://rahulshettyacademy.com/dropdownsPractise/
 
 
-
 https://opensource-demo.orangehrmlive.com/index.php/pim/viewEmployeeList/reset/1
 http://omayo.blogspot.com/
 https://rahulshettyacademy.com/seleniumPractise/#/
+https://rahulshettyacademy.com/loginpagePractise/
+
+window handles/tab handling:
+----------------------------
+https://www.naukri.com/
+
+drag and drop/ frames:
+-------------------------
+https://jqueryui.com/droppable/
+
+
+example 1:
+-----------
+1. https://rahulshettyacademy.com/seleniumPractise/#/
+2. click on the items as per users input(items and quantity)
+3**. validate items and price on the header
+4. click on the kart icon
+5** validate items and price and quantity
+6. proceed to checkout
+7**. validate items and price and quantity in the table
+8. apply valid promocode
+9.** check "Code applied ..!" text is displayed or not and validate the text as well.
+10. place order
+11. select a country , agree the conditions
+12. proceed
+13. click on home page link
+
+Example2:
+----------
+1. http://the-internet.herokuapp.com/
+2. go to nested frames
+3. print "middle" on the console
+
+Example3:
+---------
+1. http://the-internet.herokuapp.com/
+2. go to  iframes
+3. grab the text inside text box
+4. remove the text
+5. enter your name
+
+Exmple4:
+----------
+1. naukri
+2. get all titles of windows
+3. click services header link
+4. get the title from the newtab.
+
+
+
+
+
+
+
+
+
+
+
+

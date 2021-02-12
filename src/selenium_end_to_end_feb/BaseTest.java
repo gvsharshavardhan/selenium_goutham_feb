@@ -64,4 +64,12 @@ public class BaseTest {
 	public String getAlertText() {
 		return getDriver().switchTo().alert().getText();
 	}
+	
+	public void goTo(String url) {
+		driver.get(url);
+	}
+	
+	public void navigateTo(String url) {
+		driver.navigate().to(url);
+	}
 }
