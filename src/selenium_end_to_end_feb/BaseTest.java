@@ -3,7 +3,9 @@ package selenium_end_to_end_feb;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
@@ -71,5 +73,14 @@ public class BaseTest {
 	
 	public void navigateTo(String url) {
 		driver.navigate().to(url);
+	}
+	
+	public WebElement getElementByCss(String cssSelector) {
+		return driver.findElement(By.cssSelector(cssSelector));
+	}
+	
+	public void scrollintoviewJSScript(WebElement e) {	
+		JavascriptExecutor jse = ((JavascriptExecutor)getDriver());
+		jse.executeScript("arguments[0].scrollIntoView()", e);
 	}
 }

@@ -7,8 +7,6 @@ window handles:
 3. why only set?
 	because windows ids are unique and set takes only unique elements
 
-
-
 Practice sites:
 -----------------
 10-02-2021
@@ -24,6 +22,7 @@ https://opensource-demo.orangehrmlive.com/index.php/pim/viewEmployeeList/reset/1
 http://omayo.blogspot.com/
 https://rahulshettyacademy.com/seleniumPractise/#/
 https://rahulshettyacademy.com/loginpagePractise/
+https://www.rahulshettyacademy.com/AutomationPractice/
 
 window handles/tab handling:
 ----------------------------
@@ -32,6 +31,78 @@ https://www.naukri.com/
 drag and drop/ frames:
 -------------------------
 https://jqueryui.com/droppable/
+
+
+actions class
+---------------
+Selenium's Action vs Actions (What's The Difference) 
+	entering caps
+Double Mouse Click via Selenium Actions Class
+	https://api.jquery.com/dblclick/
+Drag & Drop Target via Selenium Actions Class 
+	https://jqueryui.com/droppable/
+Drag Slider Horizontally via Selenium Actions 
+	https://rangeslider.js.org/
+Left Mouse Click via Selenium Actions Class 
+	https://swisnl.github.io/jQuery-contextMenu/demo/trigger-left-click.html
+Drag Slider Vertically via Selenium Actions 
+	https://get.foundation/sites/docs-v5/components/range_slider.html
+Mouse Hover WebElements via Selenium Actions Class
+	https://www.amazon.in/
+Right Mouse Click via Selenium Actions Class 
+	https://swisnl.github.io/jQuery-contextMenu/demo.html
+	
+JavaScript Executor:
+---------------------	
+1. Highlight an Element
+		javascript.executeScript("arguments[0].setAttribute('style', 'background: red; border: 2px solid black;');", element);
+		sleep(1sec)
+		javascript.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element);
+		
+2. DrawBorder around an Element
+3. Generate custom Alert during Test Execution
+	js.executeScript("alert('Welcome to Guru99');");
+4. Click on an Element by using JaveScript
+	js.executeScript("arguments[0].click();", button);
+5. Refresh browser by using JavaScript
+6. Get Title by using JavaScript
+7. Get InnerText of page by using JavaScript
+8. Scroll Into View and Scroll Page Down
+	WebElement table = driver.findElement(By.cssSelector("#large-table"));
+		jsexe.executeScript("arguments[0].scrollIntoView()", table);
+
+##domain name:
+	String DomainName = js.executeScript("return document.domain;").toString();
+	
+##URL of the site:
+	String url = js.executeScript("return document.URL;").toString();
+	
+##title of the page:
+	 String TitleName = js.executeScript("return document.title;").toString();
+	 
+##Navigate to new Page i.e to generate access page. (launch new url):	
+      js.executeScript("window.location = 'http://demo.guru99.com/'");
+      
+##Vertical scroll down by 600  pixels:		
+        js.executeScript("window.scrollBy(0,600)");
+        
+##border around element:      
+        Driver.executeScript("document.getElementById('text-4').style.borderColor = 'Red'");
+        
+##Total Frames in Browser     
+        ff.executeScript("document.frames.length;");
+        
+##Adding an Element in DOM
+Driver.executeScript("var btn=document.createElement('BUTTON');"
+                     + "document.body.appendChild(btn);");
+                     
+##Size of Window                   
+Driver.executeScript("return window.innerHeight;")
+Driver.executeScript("return window.innerWidth;")
+
+## element scroll
+https://rahulshettyacademy.com/AutomationPractice/
+	document.querySelector(".tableFixHead").scrollTop=-5000
 
 
 example 1:
@@ -70,15 +141,3 @@ Exmple4:
 2. get all titles of windows
 3. click services header link
 4. get the title from the newtab.
-
-
-
-
-
-
-
-
-
-
-
-
