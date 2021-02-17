@@ -55,7 +55,7 @@ Right Mouse Click via Selenium Actions Class
 JavaScript Executor:
 ---------------------	
 1. Highlight an Element
-		javascript.executeScript("arguments[0].setAttribute('style', 'background: red; border: 2px solid black;');", element);
+		javascript.executeScript("arguments[0]	;", element);
 		sleep(1sec)
 		javascript.executeScript("arguments[0].setAttribute('style','border: solid 2px white');", element);
 		
@@ -141,3 +141,16 @@ Exmple4:
 2. get all titles of windows
 3. click services header link
 4. get the title from the newtab.
+
+5 different ways to refresh a webpage:
+---------------------------------------
+1) Actions act = new Actions(getDriver());
+		act.sendKeys(Keys.F5).perform();
+2)
+getDriver().navigate().refresh();
+3)
+getDriver().get(getDriver().getCurrentUrl());
+4)
+getDriver().navigate().to(getDriver().getCurrentUrl());
+5)
+((JavascriptExecutor)getDriver()).executeScript("history.go(0)");

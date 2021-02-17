@@ -79,8 +79,8 @@ public class BaseTest {
 		return driver.findElement(By.cssSelector(cssSelector));
 	}
 	
-	public void scrollintoviewJSScript(WebElement e) {	
+	public void scrollintoviewJScript(WebElement e) {	
 		JavascriptExecutor jse = ((JavascriptExecutor)getDriver());
-		jse.executeScript("arguments[0].scrollIntoView()", e);
+		jse.executeScript("arguments[0].scrollIntoView()",e);
 	}
 }
