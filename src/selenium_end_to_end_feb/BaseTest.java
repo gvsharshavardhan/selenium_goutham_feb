@@ -8,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -29,6 +31,7 @@ public class BaseTest {
 			driver = new FirefoxDriver();
 		}
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
 	@AfterTest
@@ -82,5 +85,19 @@ public class BaseTest {
 	public void scrollintoviewJScript(WebElement e) {	
 		JavascriptExecutor jse = ((JavascriptExecutor)getDriver());
 		jse.executeScript("arguments[0].scrollIntoView()",e);
+	}
+	
+	public void clickUsingJS(By by) {
+		WebElement e = driver.findElement(by);
+		((JavascriptExecutor)driver).executeScript("arguments[0].click();", e);
+	}
+	
+	public void waitUntillElementDisplayed(By by) {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(by)));
+	}
+	
+	public boolean isElementDisplayed(By by) {
+		return driver.findElement(by).isDisplayed();
 	}
 }
