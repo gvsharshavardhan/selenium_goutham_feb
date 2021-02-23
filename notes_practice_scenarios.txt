@@ -24,6 +24,12 @@ https://rahulshettyacademy.com/seleniumPractise/#/
 https://rahulshettyacademy.com/loginpagePractise/
 https://www.rahulshettyacademy.com/AutomationPractice/
 
+
+dynmic webtables:
+-----------------
+https://www.seleniumeasy.com/test/table-sort-search-demo.html
+
+
 window handles/tab handling:
 ----------------------------
 https://www.naukri.com/
