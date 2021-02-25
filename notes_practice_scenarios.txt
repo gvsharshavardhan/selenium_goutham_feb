@@ -25,7 +25,7 @@ https://rahulshettyacademy.com/loginpagePractise/
 https://www.rahulshettyacademy.com/AutomationPractice/
 
 
-dynmic webtables:
+dynamic webtables:
 -----------------
 https://www.seleniumeasy.com/test/table-sort-search-demo.html
 
@@ -160,3 +160,11 @@ getDriver().get(getDriver().getCurrentUrl());
 getDriver().navigate().to(getDriver().getCurrentUrl());
 5)
 ((JavascriptExecutor)getDriver()).executeScript("history.go(0)");
+
+
+
+
+//		ChromeOptions chromeOptions = new ChromeOptions();
+////		WebDriverManager.chromedriver().arch64().setup();
+//		WebDriverManager.chromedriver().setup();
+////		WebDriverManager.firefoxdriver().setup();

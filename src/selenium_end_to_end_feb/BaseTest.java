@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -23,23 +24,26 @@ import com.google.common.io.Files;
 
 public class BaseTest {
 
-	private WebDriver driver;
+	private WebDriver wdriver;
+	private EventFiringWebDriver driver;
 	String browser = "c";
 
 	@BeforeTest
 	public void setUp() {
-//		ChromeOptions chromeOptions = new ChromeOptions();
-////		WebDriverManager.chromedriver().arch64().setup();
-//		WebDriverManager.chromedriver().setup();
-////		WebDriverManager.firefoxdriver().setup();
-
 		if (browser.equals("c")) {
-			driver = new ChromeDriver();
+			wdriver = new ChromeDriver();
 		} else if (browser.equals("f")) {
-			driver = new FirefoxDriver();
+			wdriver = new FirefoxDriver();
+		}else {
+			wdriver = new ChromeDriver();
 		}
+		
+		driver = new EventFiringWebDriver(wdriver);
+		ListenerExecutor le = new ListenerExecutor();
+		driver.register(le);
+//		driver.unregister(le);
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);	
 	}
 
 	@AfterTest
@@ -112,7 +116,8 @@ public class BaseTest {
 	@AfterMethod
 	public void takeAScreenShot(ITestResult result) {
 		if (result.getStatus() == ITestResult.FAILURE) {
-			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+//			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+			File screenshot = driver.getScreenshotAs(OutputType.FILE);
 			try {
 				Files.move(screenshot, new File("screenShots/" + result.getName() + ".png"));
 			} catch (IOException e) {
