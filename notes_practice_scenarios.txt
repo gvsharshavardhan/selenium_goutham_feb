@@ -168,3 +168,33 @@ getDriver().navigate().to(getDriver().getCurrentUrl());
 ////		WebDriverManager.chromedriver().arch64().setup();
 //		WebDriverManager.chromedriver().setup();
 ////		WebDriverManager.firefoxdriver().setup();
+
+
+Broken Links:
+---------------
+1. grab all the links from the page
+2. iterate through all the links
+3. check the connection
+4. validate response should be less than 400
+
+
+collections:
+-------------
+list:
+-----
+1. Insertion order is preserved()
+2. can hold duplicates
+3. can hold heterogeneous
+4. can hold null(multiple null)
+
+
+
+
+
+
+
+
+
+
+
+
