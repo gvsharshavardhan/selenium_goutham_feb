@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="selenium_end_to_end_feb.Selenium_dropdowns"/>
+      <class name="kartExample.KartTest"/>
+      <class name="selenium_end_to_end_feb.Selenium_radio"/>
+      <class name="selenium_end_to_end_feb.WindowHandlingTests"/>
+      <class name="selenium_end_to_end_feb.JSExecutorTest"/>
+      <class name="selenium_end_to_end_feb.BrokenLinks"/>
+      <class name="selenium_end_to_end_feb.LinksNarrowDriver"/>
+      <class name="selenium_end_to_end_feb.LoginTest"/>
+      <class name="selenium_end_to_end_feb.Framestests"/>
+      <class name="selenium_end_to_end_feb.Carsautos"/>
+      <class name="selenium_end_to_end_feb.UploadFIiletest"/>
+      <class name="selenium_end_to_end_feb.Selenium_alerts"/>
+      <class name="selenium_end_to_end_feb.Actions_tests"/>
+      <class name="selenium_end_to_end_feb.Waits"/>
+      <class name="selenium_end_to_end_feb.BaseTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

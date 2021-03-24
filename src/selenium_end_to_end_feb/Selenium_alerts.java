@@ -14,5 +14,4 @@ public class Selenium_alerts extends BaseTest{
 		getDriver().switchTo().alert().accept();
 		sleep(2);
 	}
-
 }
